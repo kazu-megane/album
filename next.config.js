@@ -5,7 +5,4 @@ module.exports = {
   assetPrefix: urlPrefix,
   basePath: urlPrefix,
   reactStrictMode: true,
-  images: {
-    domains: ["picsum.photos"],
-  },
 };

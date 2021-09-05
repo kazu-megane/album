@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import { useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
 import style from "../styles/Home.module.scss";
@@ -51,7 +50,7 @@ const Home: NextPage = () => {
           </div>
           <div className={style.main__demo}>
             <div className={style.main__demoContent}>
-              <Image
+              <img
                 src="https://picsum.photos/560/560"
                 width={560}
                 height={560}
@@ -61,7 +60,7 @@ const Home: NextPage = () => {
           </div>
           <div className={style.main__demo}>
             <div className={style.main__demoContent}>
-              <Image
+              <img
                 src="https://picsum.photos/560/560"
                 width={560}
                 height={560}
@@ -71,7 +70,7 @@ const Home: NextPage = () => {
           </div>
           <div className={style.main__demo}>
             <div className={style.main__demoContent}>
-              <Image
+              <img
                 src="https://picsum.photos/560/560"
                 width={560}
                 height={560}
@@ -81,7 +80,7 @@ const Home: NextPage = () => {
           </div>
           <div className={style.main__demo}>
             <div className={style.main__demoContent}>
-              <Image
+              <img
                 src="https://picsum.photos/560/560"
                 width={560}
                 height={560}
