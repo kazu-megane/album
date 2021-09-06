@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRef } from "react";
 import HTMLFlipBook from "react-pageflip";
-import style from "../styles/album.module.scss";
+import style from "./style.module.scss";
 
 /**
  * TODO: react-pageflipでISSUEが切られていたのでそれが解決されるまでの対応

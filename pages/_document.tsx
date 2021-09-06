@@ -16,13 +16,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <style>
-            {`
-            #__next {
-                height: 100%;
-            }
-            `}
-          </style>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
