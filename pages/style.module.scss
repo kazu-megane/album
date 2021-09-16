@@ -1,0 +1,29 @@
+.main {
+  padding: 20px;
+  font-family: "Klee One", cursive;
+  height: 100vh;
+
+  & &__text {
+    // font-size: 25px;
+    text-align: center;
+  }
+
+  & &__boxes {
+    display: flex;
+  }
+
+  & &__box {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: white;
+  }
+
+  & &__cover {
+    position: absolute;
+  }
+}

@@ -1,0 +1,6 @@
+@import "./settings/index";
+@import "./reset";
+@import "./default.scss";
+
+@include reset();
+@include default();
