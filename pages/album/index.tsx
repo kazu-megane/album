@@ -10,7 +10,7 @@ import {
   config,
   useTrail,
 } from "react-spring";
-import { createClassName } from "../../utils";
+import { createClassName, url } from "../../utils";
 import style from "./style.module.scss";
 
 /**
@@ -87,7 +87,7 @@ const Album: NextPage = () => {
                 ])}
               >
                 <img
-                  src="/images/20210131-DSCF3342.jpg"
+                  src={url("/images/20210131-DSCF3342.jpg")}
                   width={560}
                   height={560}
                   className={style.Album__imageContent}
@@ -112,7 +112,7 @@ const Album: NextPage = () => {
                 ])}
               >
                 <img
-                  src="/images/20210214-DSC02908.jpg"
+                  src={url("/images/20210214-DSC02908.jpg")}
                   width={560}
                   height={560}
                   className={style.Album__imageContent}
@@ -125,7 +125,7 @@ const Album: NextPage = () => {
                 ])}
               >
                 <img
-                  src="/images/20210214-DSC02933.jpg"
+                  src={url("/images/20210214-DSC02933.jpg")}
                   width={560}
                   height={560}
                   className={style.Album__imageContent}

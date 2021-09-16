@@ -5,4 +5,7 @@ module.exports = {
   assetPrefix: urlPrefix,
   basePath: urlPrefix,
   reactStrictMode: true,
+  publicRuntimeConfig: {
+    urlPrefix,
+  },
 };
