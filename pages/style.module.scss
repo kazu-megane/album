@@ -1,25 +1,29 @@
 .main {
   padding: 20px;
   font-family: "Klee One", cursive;
+  height: 100vh;
 
   & &__text {
-    font-size: 25px;
+    // font-size: 25px;
     text-align: center;
-    overflow: hidden;
-    transform: translate(-100%, 0);
-    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 5s;
   }
 
-  & &__textContent {
-    transform: translate(100%, 0);
-    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 5s;
+  & &__boxes {
+    display: flex;
   }
 
-  & &__text.main__text--visible {
-    transform: translate(0, 0);
+  & &__box {
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    color: white;
+  }
 
-    .main__textContent {
-      transform: translate(0, 0);
-    }
+  & &__cover {
+    position: absolute;
   }
 }
