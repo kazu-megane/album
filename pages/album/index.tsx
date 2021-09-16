@@ -76,7 +76,7 @@ const Album: NextPage = () => {
           className={style.Album__book}
         >
           <div className={style.Album__page}>
-            <div className={style.Album__cover}>Aika's Album</div>
+            <div className={style.Album__cover}>Aika&apos;s Album</div>
           </div>
           <div className={style.Album__page}>
             <div className={style.Album__pageImage}>
