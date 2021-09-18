@@ -28,9 +28,35 @@
     flex-direction: column;
   }
 
+  & &__pageContent {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & &__pageContentTextWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & &__pageContentText {
+    font-family: "Klee One", cursive;
+    font-size: 14px;
+  }
+
+  & &__pageContentText + &__pageContentText {
+    margin-top: 12px;
+  }
+
   & &__pageImage {
     flex-wrap: wrap;
     gap: 40px;
+
+    &.Album__pageImage--full {
+      height: 100%;
+    }
   }
 
   & &__image,
@@ -67,7 +93,7 @@
   }
 
   & &__pageImage + &__texts {
-    margin-top: 8px;
+    margin-top: 14px;
   }
 
   & &__page1Image,
