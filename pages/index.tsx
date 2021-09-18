@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import Head from "next/head";
-import { useState, useEffect, FC, Children } from "react";
+import { useState, FC, Children } from "react";
 import {
   useSpring,
   animated,
@@ -10,11 +10,8 @@ import {
   config,
   useTrail,
 } from "react-spring";
+import { createClassName } from "../utils";
 import style from "./style.module.scss";
-
-function createClassName(classNames: Array<string>) {
-  return classNames.join(" ");
-}
 
 const Trail: FC<{ isVisible: boolean; className?: string }> = ({
   isVisible,
@@ -66,25 +63,28 @@ const Home: NextPage = () => {
     from: {
       opacity: "0",
     },
-    onRest: () => setIsVisible(true),
   });
 
   const spring3 = useSpring({
     ref: ref3,
+    delay: 1000,
     config: config.slow,
     to: {
       bottom: "0",
       width: "100%",
       height: "100vh",
       left: 0,
-      backgroundColor: "black",
+      backgroundColor: "#45858C",
     },
     from: {
       bottom: "0",
       width: "100%",
       height: "0%",
       left: 0,
-      backgroundColor: "black",
+      backgroundColor: "#ffff",
+    },
+    onStart: () => {
+      setIsVisible(true);
     },
   });
 
@@ -98,18 +98,26 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main className={style.main}>
-        <div className={style.main__text}>
-          アルバムは<Link href="/album">こちらへ</Link>
-        </div>
-        <animated.div style={spring1}>あああああ</animated.div>
-        <animated.div style={spring2}>いいいいいいい</animated.div>
-        <animated.div style={spring3} className={style.main__cover} />
-        <Trail isVisible={isVisible} className={style.main__boxes}>
-          <span className={style.main__box}>私</span>
-          <span className={style.main__box} />
-          <span className={style.main__box} />
-          <span className={style.main__box} />
-        </Trail>
+        <animated.p style={spring1} className={style.main__message}>
+          お誕生日おめでとう！
+        </animated.p>
+        <animated.p style={spring2} className={style.main__message}>
+          世界で一番、
+          <br />
+          可愛いあいかに贈りものをするね。
+        </animated.p>
+        <animated.div style={spring3} className={style.main__cover}>
+          {isVisible ? (
+            <div className={style.main__ribon}>
+              <p className={style.main__ribonText}>Happy Birthday!!</p>
+            </div>
+          ) : null}
+          <p className={style.main__text}>
+            <Link href="/album">
+              <a className={style.main__textContent}>次の画面へ</a>
+            </Link>
+          </p>
+        </animated.div>
       </main>
     </div>
   );
