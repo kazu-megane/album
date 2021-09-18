@@ -91,7 +91,7 @@ const Album: NextPage = () => {
   const spring7 = useSpring({
     ref: ref7,
     config: config.molasses,
-    opacity: isDisplayedPage23 ? "1" : "0",
+    opacity: isDisplayedPage3 ? "1" : "0",
   });
 
   const spring8 = useSpring({
