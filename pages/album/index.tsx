@@ -214,7 +214,11 @@ const Album: NextPage = () => {
         >
           {/* 表紙 */}
           <div className={style.Album__page}>
-            <div className={style.Album__cover}>Aika&apos;s Album</div>
+            {/* <div className={style.Album__cover}>Aika&apos;s Album</div> */}
+            <div className={style.Album__cover}>
+              <p className={style.Album__coverText}>Aika Suzuki</p>
+              <p className={style.Album__coverText}>26 years old</p>
+            </div>
           </div>
           {/* 1ページ目（縦長画像） */}
           <div className={style.Album__page}>

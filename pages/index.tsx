@@ -10,7 +10,7 @@ import {
   config,
   useTrail,
 } from "react-spring";
-import { createClassName } from "../utils";
+import { createClassName, url } from "../utils";
 import style from "./style.module.scss";
 
 const Trail: FC<{ isVisible: boolean; className?: string }> = ({
@@ -88,7 +88,7 @@ const Home: NextPage = () => {
     },
   });
 
-  useChain([ref1, ref2, ref3], [1, 2, 3]);
+  useChain([ref1, ref2, ref3], [1, 3, 5]);
 
   return (
     <div className={style.container}>
@@ -108,15 +108,20 @@ const Home: NextPage = () => {
         </animated.p>
         <animated.div style={spring3} className={style.main__cover}>
           {isVisible ? (
-            <div className={style.main__ribon}>
-              <p className={style.main__ribonText}>Happy Birthday!!</p>
-            </div>
+            <>
+              <div className={style.main__ribon}>
+                <p className={style.main__ribonText}>Happy Birthday!!</p>
+              </div>
+              <div>
+                <img src={url("/images/aika.jpg")} width={200} height={200} />
+              </div>
+              <div className={style.main__textWrap}>
+                <Link href="/album">
+                  <a className={style.main__text}>プレゼントを見る</a>
+                </Link>
+              </div>
+            </>
           ) : null}
-          <p className={style.main__text}>
-            <Link href="/album">
-              <a className={style.main__textContent}>次の画面へ</a>
-            </Link>
-          </p>
         </animated.div>
       </main>
     </div>
