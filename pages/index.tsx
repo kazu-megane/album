@@ -113,7 +113,12 @@ const Home: NextPage = () => {
                 <p className={style.main__ribonText}>Happy Birthday!!</p>
               </div>
               <div>
-                <img src={url("/images/aika.jpg")} width={200} height={200} />
+                <img
+                  src={url("/images/aika.jpg")}
+                  alt=""
+                  width={200}
+                  height={200}
+                />
               </div>
               <div className={style.main__textWrap}>
                 <Link href="/album">
