@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { useRef, useState } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 
 import HTMLFlipBook from "react-pageflip";
 import {
@@ -139,6 +139,47 @@ const Album: NextPage = () => {
   useChain([ref8], [1]);
   useChain([ref9, ref10, ref11, ref12, ref13], [1, 2, 4, 6, 8]);
 
+  useEffect(() => {
+    if (mode === MODE.LANDSCAPE) {
+      if (page >= 1) {
+        setIsDisplayedPage1(true);
+        setIsDisplayedPage2(true);
+      }
+      if (page >= 3) {
+        setIsDisplayedPage4(true);
+      }
+      if (page >= 15) {
+        setIsDisplayedPage3(true);
+      }
+      if (page >= 23) {
+        setIsDisplayedPage23(true);
+      }
+      if (page >= 33) {
+        setIsDisplayedPage34(true);
+      }
+    }
+    if (mode === MODE.PORTRATE) {
+      if (page >= 1) {
+        setIsDisplayedPage1(true);
+      }
+      if (page >= 2) {
+        setIsDisplayedPage2(true);
+      }
+      if (page >= 4) {
+        setIsDisplayedPage4(true);
+      }
+      if (page >= 15) {
+        setIsDisplayedPage3(true);
+      }
+      if (page >= 23) {
+        setIsDisplayedPage23(true);
+      }
+      if (page >= 34) {
+        setIsDisplayedPage34(true);
+      }
+    }
+  }, [page, mode]);
+
   return (
     <>
       <Head>
@@ -157,7 +198,6 @@ const Album: NextPage = () => {
           minHeight={400}
           maxHeight={1533}
           showCover={true}
-          renderOnlyPageLengthChange={true}
           onInit={(event) => {
             console.log(event);
             if (event.data.mode === MODE.LANDSCAPE) {
@@ -175,47 +215,8 @@ const Album: NextPage = () => {
             }
           }}
           onFlip={(event) => {
-            console.log(event);
             const page = event.data;
             setPage(page);
-            if (mode === MODE.LANDSCAPE) {
-              if (page >= 1) {
-                setIsDisplayedPage1(true);
-                setIsDisplayedPage2(true);
-              }
-              if (page >= 3) {
-                setIsDisplayedPage4(true);
-              }
-              if (page >= 15) {
-                setIsDisplayedPage3(true);
-              }
-              if (page >= 23) {
-                setIsDisplayedPage23(true);
-              }
-              if (page >= 33) {
-                setIsDisplayedPage34(true);
-              }
-            }
-            if (mode === MODE.PORTRATE) {
-              if (page >= 1) {
-                setIsDisplayedPage1(true);
-              }
-              if (page >= 2) {
-                setIsDisplayedPage2(true);
-              }
-              if (page >= 4) {
-                setIsDisplayedPage4(true);
-              }
-              if (page >= 15) {
-                setIsDisplayedPage3(true);
-              }
-              if (page >= 23) {
-                setIsDisplayedPage23(true);
-              }
-              if (page >= 34) {
-                setIsDisplayedPage34(true);
-              }
-            }
           }}
           ref={book}
           className={style.Album__book}
