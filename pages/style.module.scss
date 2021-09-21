@@ -3,6 +3,7 @@
     background: #fff;
     padding: 1em 2em;
     width: 80%;
+    max-width: 550px;
     margin: 30px auto;
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.7);
   }
@@ -21,6 +22,11 @@
 
   & &__noteMessage {
     font-family: "Klee One", cursive;
+
+    &:first-child {
+      text-align: center;
+      font-weight: bold;
+    }
 
     &.Schedule__noteMessage--new {
       margin-bottom: 2em;
