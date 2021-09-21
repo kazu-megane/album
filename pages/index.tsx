@@ -18,7 +18,7 @@ const Schedule: FC = () => {
             presented by Kazuya.
           </p>
           <p className={style.Schedule__noteMessage}>
-            開催日：9/23(木)〜9/24(金)
+            開催日：9/23(木)〜9/24(金)（9/23の夜、9/24のお昼含む）
           </p>
           <p className={style.Schedule__noteMessage}>場所：お楽しみ</p>
           <p
