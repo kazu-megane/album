@@ -113,4 +113,24 @@
   & &__page2Image {
     width: 80%;
   }
+
+  & &__videoWraper {
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  & &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  & &__coverMessage {
+    font-family: "Klee One", cursive;
+  }
 }

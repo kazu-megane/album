@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useRef, useState } from "react";
+
 import HTMLFlipBook from "react-pageflip";
 import {
   useSpring,
@@ -8,7 +9,6 @@ import {
   useChain,
   useSpringRef,
   config,
-  useTrail,
 } from "react-spring";
 import { createClassName, url } from "../../utils";
 import style from "./style.module.scss";
@@ -1153,8 +1153,32 @@ const Album: NextPage = () => {
               </div>
             </div>
           </div>
+          {/* 33ページ目（横画像1枚） */}
           <div className={style.Album__page}>
-            <div className={style.Album__cover}>to be continue.</div>
+            <div
+              className={createClassName([
+                style.Album__pageImage,
+                style["Album__pageImage--full"],
+              ])}
+            >
+              <div className={style.Album__videoWraper}>
+                <iframe
+                  width="297"
+                  height="528"
+                  src={
+                    "https://www.youtube.com/embed/kvKz9FFtWw0?playsinline=1"
+                  }
+                  className={style.Album__video}
+                />
+              </div>
+            </div>
+          </div>
+          <div className={style.Album__page}>
+            <div className={style.Album__cover}>
+              <p className={style.Album__coverMessage}>
+                これからも楽しい思い出たくさん作ろうね。
+              </p>
+            </div>
           </div>
         </HTMLFlipBook>
       </main>
