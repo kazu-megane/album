@@ -45,6 +45,8 @@ const Album: NextPage = () => {
     MODE.LANDSCAPE
   );
 
+  const [page, setPage] = useState(0);
+
   const [isDisplayedPage1, setIsDisplayedPage1] = useState(false);
   const [isDisplayedPage2, setIsDisplayedPage2] = useState(false);
   const [isDisplayedPage3, setIsDisplayedPage3] = useState(false);
@@ -154,8 +156,8 @@ const Album: NextPage = () => {
           maxWidth={1000}
           minHeight={400}
           maxHeight={1533}
-          // maxShadowOpacity={0.5}
           showCover={true}
+          renderOnlyPageLengthChange={true}
           onInit={(event) => {
             console.log(event);
             if (event.data.mode === MODE.LANDSCAPE) {
@@ -164,12 +166,18 @@ const Album: NextPage = () => {
               setMode(MODE.PORTRATE);
             }
           }}
-          onChangeOrientation={(mode) => {
+          onChangeOrientation={(event) => {
             console.log(mode);
+            if (event.data === MODE.LANDSCAPE) {
+              setMode(MODE.LANDSCAPE);
+            } else {
+              setMode(MODE.PORTRATE);
+            }
           }}
           onFlip={(event) => {
             console.log(event);
             const page = event.data;
+            setPage(page);
             if (mode === MODE.LANDSCAPE) {
               if (page >= 1) {
                 setIsDisplayedPage1(true);
@@ -1181,6 +1189,38 @@ const Album: NextPage = () => {
             </div>
           </div>
         </HTMLFlipBook>
+        {mode === MODE.PORTRATE ? (
+          <div className={style.Album__action}>
+            <button
+              onClick={() => {
+                const flipBook = book.current as any;
+                if (flipBook) {
+                  flipBook.pageFlip().flipPrev();
+                }
+              }}
+              className={createClassName([
+                style.Album__prevButton,
+                page === 0 ? style["Album__prevButton--disabled"] : "",
+              ])}
+            >
+              PREV
+            </button>
+            <button
+              onClick={() => {
+                const flipBook = book.current as any;
+                if (flipBook) {
+                  flipBook.pageFlip().flipNext();
+                }
+              }}
+              className={createClassName([
+                style.Album__nextButton,
+                page === 36 ? style["Album__nextButton--disabled"] : "",
+              ])}
+            >
+              NEXT
+            </button>
+          </div>
+        ) : null}
       </main>
     </>
   );

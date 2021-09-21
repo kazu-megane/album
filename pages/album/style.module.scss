@@ -133,4 +133,31 @@
   & &__coverMessage {
     font-family: "Klee One", cursive;
   }
+
+  & &__action {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & &__prevButton,
+  & &__nextButton {
+    border: 1px solid #333333;
+    color: #333333;
+    padding: 6px 10px;
+    border-radius: 4px;
+
+    &.Album__prevButton--disabled,
+    &.Album__nextButton--disabled {
+      pointer-events: none;
+      background-color: rgb(204, 204, 204);
+      border-color: rgb(204, 204, 204);
+      color: gray;
+    }
+  }
+
+  & &__prevButton + &__nextButton {
+    margin-left: 80px;
+  }
 }

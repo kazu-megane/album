@@ -93,8 +93,8 @@ const Home: NextPage = () => {
   return (
     <div className={style.container}>
       <Head>
-        <title>Album</title>
-        <meta name="description" content="Album" />
+        <title>鈴木愛香　生誕祭</title>
+        <meta name="description" content="鈴木愛香　生誕祭" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main className={style.main}>
