@@ -45,6 +45,8 @@ const Album: NextPage = () => {
     MODE.LANDSCAPE
   );
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const [page, setPage] = useState(0);
 
   const [isDisplayedPage1, setIsDisplayedPage1] = useState(false);
@@ -187,7 +189,12 @@ const Album: NextPage = () => {
         <meta name="description" content="Album" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <main className={style.Album}>
+      <main
+        className={createClassName([
+          style.Album,
+          isLoaded ? "" : style["Album--loading"],
+        ])}
+      >
         <HTMLFlipBook
           {...temp}
           width={550}
@@ -205,6 +212,7 @@ const Album: NextPage = () => {
             } else {
               setMode(MODE.PORTRATE);
             }
+            setIsLoaded(true);
           }}
           onChangeOrientation={(event) => {
             console.log(mode);
