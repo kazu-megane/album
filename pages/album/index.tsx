@@ -1153,7 +1153,7 @@ const Album: NextPage = () => {
               </div>
             </div>
           </div>
-          {/* 33ページ目（横画像1枚） */}
+          {/* 35ページ目（動画） */}
           <div className={style.Album__page}>
             <div
               className={createClassName([
