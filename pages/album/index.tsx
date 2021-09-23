@@ -187,7 +187,6 @@ const Album: NextPage = () => {
       <Head>
         <title>Album</title>
         <meta name="description" content="Album" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main
         className={createClassName([

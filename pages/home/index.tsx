@@ -88,7 +88,7 @@ const Home: NextPage = () => {
     },
   });
 
-  useChain([ref1, ref2, ref3], [1, 3, 5]);
+  useChain([ref1, ref2, ref3], [2, 4, 6]);
 
   return (
     <div className={style.container}>
